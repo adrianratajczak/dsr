@@ -3,7 +3,7 @@ Deadly Simple Runner
 
 Ultra simple gulp kit. It just works. Less is more.
 # version
-0.0.1
+0.0.2
 
 # included
  - jshint
