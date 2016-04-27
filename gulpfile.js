@@ -24,7 +24,7 @@ gulp.task('jshint', function() {
 });
 
 // configure the sass task
-gulp.task('build-css', function() {
+gulp.task('sass', function() {
   return gulp.src(scssSrc)
 
     .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
@@ -37,23 +37,14 @@ gulp.task('build-css', function() {
 });
 
 
-// browserSync task
-gulp.task('browser-sync', function() {
+// configure which files to watch and what tasks to use on file changes & setup BrowserSync
+gulp.task('watch', function() {
   browserSync.init({
       proxy: "localhost"
   });
   gulp.watch("*.html").on('change', browserSync.reload);
-
-});
-
-
-// configure which files to watch and what tasks to use on file changes
-gulp.task('watch', function() {
-
+  
   gulp.watch(jsSrc, ['jshint']);
   gulp.watch(scssSrc, ['build-css']);
 
 });
-
-// define the default task and add the watch task to it
-gulp.task('default', ['watch', 'browser-sync']);
