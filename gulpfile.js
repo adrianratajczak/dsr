@@ -1,5 +1,5 @@
 /* File: gulpfile.js */
-
+require('es6-promise').polyfill();
 // grab our packages
 var gulp   = require('gulp'),
     jshint = require('gulp-jshint');
@@ -45,6 +45,6 @@ gulp.task('watch', function() {
   gulp.watch("*.html").on('change', browserSync.reload);
   
   gulp.watch(jsSrc, ['jshint']);
-  gulp.watch(scssSrc, ['build-css']);
+  gulp.watch(scssSrc, ['sass']);
 
 });
