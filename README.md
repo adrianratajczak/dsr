@@ -1,5 +1,5 @@
 # dsr
-Deadly Simple Runner
+Dead Simple Runner
 
 Ultra simple gulp kit. It just works. Less is more.
 # version
