@@ -3,11 +3,12 @@ Dead Simple Runner
 
 Ultra simple gulp kit. It just works. Less is more.
 # version
-0.0.3
+0.0.4
 
 # included
  - jshint
  - sass
+ - gulp-clean-css
  - sourcemaps
  - autoprefixer
  - browsersync
@@ -29,3 +30,10 @@ Inside `gulpfile.js` there are few variables. You need to set them according to 
 3. gulp watch
 
 and that's all
+
+
+#changelog//
+
+v.0.0.4 {
+	added gulp-clean-css
+}

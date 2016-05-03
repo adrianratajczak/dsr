@@ -9,6 +9,7 @@ var gulp   = require('gulp'),
     browserSync = require('browser-sync').create();
     plumber = require('gulp-plumber');
     notify = require("gulp-notify");
+    cleanCSS = require('gulp-clean-css');
 
     jsSrc = 'js/**/*.js';
     scssSrc = 'scss/**/*.scss';
@@ -32,6 +33,7 @@ gulp.task('sass', function() {
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
     .pipe(sourcemaps.write())
+    .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(gulp.dest(cssPub))
     .pipe(browserSync.stream());
 });
@@ -43,7 +45,7 @@ gulp.task('watch', function() {
       proxy: "localhost"
   });
   gulp.watch("*.html").on('change', browserSync.reload);
-  
+
   gulp.watch(jsSrc, ['jshint']);
   gulp.watch(scssSrc, ['sass']);
 
